@@ -4,8 +4,24 @@ return {
         lazy = false,
         build = ':TSUpdate'
     },
+    {
+      "folke/which-key.nvim",
+      event = "VeryLazy",
+      opts = {
+        preset = "helix", 
+      },
+      keys = {
+        {
+          "<leader>?",
+          function()
+            require("which-key").show({ global = false })
+          end,
+          desc = "Buffer Local Keymaps (which-key)",
+        },
+      },
+    }, 
     { 
-        'rebelot/kanagawa.nvim',   
+         "rebelot/kanagawa.nvim",
     },
     {
         "nvim-neo-tree/neo-tree.nvim",

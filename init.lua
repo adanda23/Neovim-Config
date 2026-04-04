@@ -3,12 +3,25 @@ require("config.lazy")
 
 -- Setup colorscheme, options, and keymaps
 vim.cmd.colorscheme 'kanagawa-dragon'
+
 vim.opt.number = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4  
 vim.opt.shiftwidth = 4  
 vim.opt.expandtab = true
 vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { silent = true, desc = "Toggle Neo-tree" })
+
+-- Enable inline error messages
+vim.diagnostic.config({
+  virtual_text = true,   
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  float = {
+    border = "rounded",
+    source = true,
+  },
+})
 
 -- Setup LSP servers
 vim.lsp.config("clangd", {
