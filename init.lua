@@ -10,6 +10,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4  
 vim.opt.expandtab = true
 vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { silent = true, desc = "Toggle Neo-tree" })
+vim.keymap.set('n', '<leader>ff', ':Telescope find_files', { desc = 'Telescope find files' })
 
 -- Enable inline error messages
 vim.diagnostic.config({
