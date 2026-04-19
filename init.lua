@@ -12,6 +12,8 @@ vim.opt.expandtab = true
 vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { silent = true, desc = "Toggle Neo-tree" })
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files", { desc = "Telescope find files" })
 
+vim.opt.clipboard = "unnamedplus"
+
 -- Enable inline error messages
 vim.diagnostic.config({
 	virtual_text = true,
@@ -23,6 +25,16 @@ vim.diagnostic.config({
 		source = true,
 	},
 })
+
+-- Scroll down half a page and recenter
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+
+-- Scroll up half a page and recenter
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Center while searching (optional but helpful)
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 vim.api.nvim_create_autocmd("QuitPre", {
 	callback = function()

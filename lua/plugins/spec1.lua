@@ -5,6 +5,11 @@ return {
 		build = ":TSUpdate",
 	},
 	{
+		"echasnovski/mini.icons",
+		version = false, -- use 'main' branch for latest features
+		opts = {}, -- equivalent to require('mini.icons').setup({})
+	},
+	{
 		"stevearc/conform.nvim",
 		config = function()
 			require("conform").setup({
@@ -85,6 +90,7 @@ return {
 
 			-- Recommended/example keymaps
 			vim.keymap.set({ "n", "x" }, "<leader>a", function()
+				vim.cmd("write")
 				require("opencode").ask("@this: ", { submit = true })
 			end, { desc = "Ask opencode…" })
 			vim.keymap.set({ "n", "x" }, "<leader>x", function()
