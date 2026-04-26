@@ -1,3 +1,5 @@
+-- My setup
+
 -- Setup lazy
 require("config.lazy")
 
