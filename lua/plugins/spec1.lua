@@ -4,7 +4,8 @@ return {
 		lazy = false,
 		build = ":TSUpdate",
 	},
-	{
+	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+    {
 		"echasnovski/mini.icons",
 		version = false,
 		opts = {},
@@ -23,15 +24,6 @@ return {
 				require("conform").format({ async = true })
 			end, { desc = "Format current file" })
 		end,
-	},
-	{
-		"coder/claudecode.nvim",
-		dependencies = { "folke/snacks.nvim" }, -- you already have this
-		config = true,
-		keys = {
-			{ "<leader>cc", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude Code" },
-			{ "<leader>cs", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
-		},
 	},
 	{
 		"folke/flash.nvim",

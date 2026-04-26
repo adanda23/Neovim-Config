@@ -11,8 +11,9 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { silent = true, desc = "Toggle Neo-tree" })
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files", { desc = "Telescope find files" })
-
 vim.opt.clipboard = "unnamedplus"
+vim.keymap.set('n', '<leader>r', '<cmd>checktime<cr>', { desc = 'Refresh buffers' })
+
 
 -- Enable inline error messages
 vim.diagnostic.config({
@@ -25,6 +26,19 @@ vim.diagnostic.config({
 		source = true,
 	},
 })
+
+-- ToggleTerm Setup
+require("toggleterm").setup({
+  size = 40,
+  direction = "vertical",
+  open_mapping = [[<leader>t]],
+  insert_mappings = false, -- only trigger in normal mode
+  terminal_mappings = false,
+})
+
+vim.keymap.set('n', '<leader>ot', '<cmd>ToggleTerm<cr>', { desc = 'Open terminal' })
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
+
 
 -- Scroll down half a page and recenter
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
