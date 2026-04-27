@@ -5,6 +5,7 @@ return {
 		build = ":TSUpdate",
 	},
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+    {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
     {
 		"echasnovski/mini.icons",
 		version = false,

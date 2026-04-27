@@ -12,7 +12,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { silent = true, desc = "Toggle Neo-tree" })
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files", { desc = "Telescope find files" })
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Telescope find files" })
 vim.opt.clipboard = "unnamedplus"
 vim.keymap.set('n', '<leader>r', '<cmd>checktime<cr>', { desc = 'Refresh buffers' })
 
@@ -31,7 +31,7 @@ vim.diagnostic.config({
 
 -- ToggleTerm Setup
 require("toggleterm").setup({
-  size = 40,
+  size = 50,
   direction = "vertical",
   open_mapping = [[<leader>t]],
   insert_mappings = false, -- only trigger in normal mode
@@ -81,6 +81,12 @@ vim.lsp.config("basedpyright", {
 	},
 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
+
+vim.opt.termguicolors = true
+require("bufferline").setup{}
+
+vim.keymap.set('n', '<Tab>', '<cmd>bnext<cr>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<S-Tab>', '<cmd>bprev<cr>', { desc = 'Previous buffer' })
 
 vim.lsp.enable("clangd")
 vim.lsp.enable("basedpyright")
