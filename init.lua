@@ -41,17 +41,6 @@ require("toggleterm").setup({
 vim.keymap.set('n', '<leader>ot', '<cmd>ToggleTerm<cr>', { desc = 'Open terminal' })
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
 
-
--- Scroll down half a page and recenter
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-
--- Scroll up half a page and recenter
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
--- Center while searching (optional but helpful)
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-
 vim.api.nvim_create_autocmd("QuitPre", {
 	callback = function()
 		vim.cmd("Neotree close")
